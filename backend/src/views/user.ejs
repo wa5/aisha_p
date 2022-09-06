@@ -1,0 +1,39 @@
+<%- include('partials/header2'); -%>
+
+<div class="container-fluid">
+    <%- include('partials/navbar'); -%>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    </style>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <img src="https://source.unsplash.com/user/c_v_r"  width="200px" height="200px" class="rounded-circle" alt="Cinque Terre">
+       <br>
+       <span>name:</span><%= user.name %><br/>
+       <span>email:</span><%= user.email %><br/>
+       <span>user-role:</span>
+       <% if (user.role==0) { %>
+        <span>norml user</span>
+      <% } else { %>
+        <p>admin</p>
+      <% } %>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include('partials/header2'); -%>
+<h1>user details</h1>
+<div>
+    <span>name:</span><%=user.name%>
+</div>
+

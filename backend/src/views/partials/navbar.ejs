@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col">
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">test</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/api/home">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <% if (user != null) { %>
+                    <% if (user.role==1) { %>
+                    
+                   
+                    <% }  %>
+                    <% } %>
+                      
+                      
+                  </li>
+                 
+                 
+                  <% if (user) { %>
+                    
+                    
+                  <% } else { %>
+                    <li>  <a class="btn  btn-info" href="/api/login" role="button">login </a>
+                    </li>
+                    <li>  <a class="btn  btn-info" href="/api/login" role="button">sign up </a>
+                    </li>
+                  <% } %>
+                 
+                </ul>
+            <% if (user) { %>
+              <img src="https://source.unsplash.com/user/c_v_r" width="40px"  height="40px" class="rounded-circle" alt="Cinque Terre">
+     
+              <button class="btn btn-outline-success" type="submit"><a href="/api/userdetails"><%= user.name %></a></button>
+             
+                    <li> <a class="btn  btn-info" href="/api/logout" role="button">log out </a>
+                    </li>
+                  <% }%>
+              </div>
+            </div>
+          </nav>
+
+    </div>
+</div>

@@ -1,0 +1,14 @@
+20220905	23:14:43	9e37bff0-065c-4f22-8358-54dfd8a56a3d	GET	undefined	/api/home
+20220905	23:14:44	7c06807a-2c07-4c47-b8e6-dcaa0038cab7	GET	undefined	/css/izmir.min.css
+20220905	23:14:45	f9d08a73-a224-4fe3-8553-fb2a731d2b5b	GET	undefined	/img/6.png
+20220905	23:14:45	3dcb4ca7-0f69-4aab-9df0-8542719a9870	GET	undefined	/img/2.jpg
+20220905	23:14:45	1fb4adf7-dd6c-4304-b8cc-3439efa3cc05	GET	undefined	/img/7.png
+20220905	23:14:47	f61f8371-8ce2-4ae9-b537-dff46baa768c	GET	undefined	/favicon.ico
+20220905	23:14:55	a4d8eff5-a7e0-4f20-b7ac-6cc4590b786a	GET	undefined	/api/logout
+20220905	23:15:07	253ca675-55c2-4bae-9fe4-12abd0283c23	POST	http://localhost:8000	/api/login
+20220905	23:15:07	72b32c23-31c2-4b54-8a87-82264d4d4b2e	GET	undefined	/css/izmir.min.css
+20220906	00:03:43	4e595e51-213f-49e1-ab14-c86393632170	GET	undefined	/api/logout
+20220906	00:03:45	28921103-7c78-4025-bbe8-ccc8842fd16e	GET	undefined	/api/register
+20220906	00:03:45	e55d30db-dd82-4f7a-bae7-fc682a4e228e	GET	undefined	/css/izmir.min.css
+20220906	08:09:55	71a5e11f-5e28-47b1-9e66-9cc65fff3eae	GET	undefined	/api/register
+20220906	08:09:56	4271e2f5-5bf4-4a21-9ca4-72989523e26c	GET	undefined	/css/izmir.min.css

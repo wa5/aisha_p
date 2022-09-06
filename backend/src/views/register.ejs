@@ -1,0 +1,57 @@
+
+<%- include('partials/header2'); -%>
+<div class="container-fluid">
+  <%- include('partials/navbar'); -%>
+  <div class="row">
+  
+    <div class="col"></div>
+    <div class="col">
+      <h1>Register</h1>
+      <form id="myform" action="http://localhost:8000/api/register" method="post">
+        <div class="form-group">
+          <label for="email">Name</label>
+          <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password"  class="form-control">
+        <p class="text-danger" id="invalid"></p>
+        </div>
+        
+        <input type="button" class="btn btn-class btn-lg btn-danger btn-block"  onclick="CheckPassword(this.form);" value="Register"/> 
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+<script>
+  function CheckPassword(a) 
+{ 
+  var passwed=document.getElementById("password").value;
+console.log(a)
+var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+ if(passwed.match(passw)) 
+ { 
+  alert(passwed)
+  a.submit();
+//document.getElementById("myForm").submit();
+alert(passwed)
+ }
+ else
+ { 
+
+ var t='your password should contain  one numeric digit, one uppercase and one lowercase letter'
+var k= document.getElementById('invalid').innerText=t
+
+
+// return false;
+ }
+}
+</script>
+<p style="color: red;"><%= error %></p>
+
+<%- include('partials/footer'); -%>
