@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const CLIENT_URL = "http://localhost:3000/";
+const CLIENT_URL = "https://localhost:3000";
 
 router.get("/login/success", (req, res) => {
+console.log("oooo",req.user)
   if (req.user) {
     res.status(200).json({
       success: true,
@@ -15,6 +16,7 @@ router.get("/login/success", (req, res) => {
 });
 
 router.get("/login/failed", (req, res) => {
+  console.log(req.user)
   res.status(401).json({
     success: false,
     message: "failure",
@@ -46,7 +48,7 @@ router.get(
   })
 );
 
-router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }));
+router.get("/facebook", passport.authenticate("facebook"));
 
 router.get(
   "/facebook/callback",
