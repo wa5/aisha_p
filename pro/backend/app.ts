@@ -6,12 +6,21 @@ const path=require('path')
 const cors=require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+ require("./src/middleware/auth/passort");
 app.use(bodyParser.urlencoded({ extended: true }));
 //logger
 const { logger } = require('./src/middleware/logfiles/logEvents');
 const  errorHandler  = require('./src/middleware/logfiles/errorHandler');
+const endPont=require('./src/routes')
+const passport = require("passport");
+const cookieSession = require("cookie-session");
 
 
+app.use(
+  cookieSession({ name: "session", keys: ["aisha"], maxAge: 24 * 60 * 60 * 100 })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cors({
     origin:'*',
     methods: "GET,POST,PUT,DELETE",
@@ -24,6 +33,9 @@ app.use(cors({
 
 app.use(logger);
 //apis
+app.use('/api',endPont.fbcall)
+app.use('/api',endPont.fbcallback)
+app.use('/api',endPont.extrainfocheck)
 
 app.all('*', (req, res) => {
     res.status(404);
