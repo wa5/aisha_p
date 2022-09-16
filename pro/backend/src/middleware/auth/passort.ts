@@ -63,12 +63,13 @@ passport.use(
      // console.log(newUser);
      var conflic= await  User.find({ fb_id:profile.id })
      console.log("email already exits",conflic!=0);
-     if (!conflic) {
+     if (conflic[0]) {
+      console.log("email already exitsl",!conflic);
+      done(null, profile);
+     
+     }else{
       var userdta = new User(newUser);
       userdta.save();
-      done(null, profile);
-     }else{
-      console.log("email already exitsl",!conflic);
       done(null, profile);
      }
       

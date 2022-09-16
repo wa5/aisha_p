@@ -12,10 +12,11 @@ function App() {
 
 <Router>
   <Routes>
+  <Route path='/' element={<Login/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
     <Route path='/dashbord' element={<Dashbord/>}/>
-    <Route path='/moreinfo' element={<Moreinfo/>}/>
+    <Route path='/moreinfo/:id' element={<Moreinfo/>}/>
   </Routes>
 </Router>
     

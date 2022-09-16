@@ -11,6 +11,11 @@ const  Moreinfo:React.FC<IMoreinfo>=(props)=>{
         <Col><Navbers1/></Col>
       </Row>
       <Row>
+      <Col></Col>
+        <Col><h1>give more info to register</h1></Col>
+        <Col></Col>
+      </Row>
+      <Row>
         <Col><MoreInfoForm/></Col>
       </Row>
       
