@@ -9,8 +9,8 @@ Router.route('/facebook/callback')
     failureRedirect: "https://localhost:3000/login",
   }),(req:any,res:any,info:any)=>{
     console.log('000',res.req.user.id)
-    console.log('000',res.params)
-    console.log('000',res.body)
+    console.log('000ll',res.req.user)
+   
     res.redirect(`/api/extrainfocheck/${res.req.user.id}`)
   })
 

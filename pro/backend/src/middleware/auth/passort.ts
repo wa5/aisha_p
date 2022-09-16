@@ -53,6 +53,7 @@ passport.use(
       console.log(profile.id, profile.displayName, profile.email, accessToken);
 
       const newUser = {
+        
         fb_id: profile.id,
         fname: profile.displayName,
         lname: profile.displayName,
