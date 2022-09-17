@@ -4,6 +4,7 @@ import Navbers1 from '../../components/navbar/Navbers1';
 import Google from '../../img/google.png'
 import Facebook from '../../img/facebook.png'
 import LoginForm from '../../components/Forms/LoginForm';
+import { Link } from 'react-router-dom';
 export interface ILogin{};
 
 const  Login:React.FC<ILogin>=(props)=>{
@@ -26,6 +27,7 @@ const  Login:React.FC<ILogin>=(props)=>{
       <Row>
         
         <Col>
+        
         <div className="login">
       <h1 className="loginTitle">Choose a Login Method</h1>
       <div className="wrapper">
@@ -55,7 +57,7 @@ const  Login:React.FC<ILogin>=(props)=>{
         </Col>
       </Row>
       <Row>
-        
+       
       </Row>
     </Container>
     </>);

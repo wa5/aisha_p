@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form,Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export interface ILoginFormProps{};
 
@@ -56,6 +56,11 @@ const  LoginForm:React.FC<ILoginFormProps>=(props)=>{
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      <Link to="/register">
+      <Button variant="danger" type="submit">
+      signup
+      </Button></Link>
+      
     </Form>
     
     </>);

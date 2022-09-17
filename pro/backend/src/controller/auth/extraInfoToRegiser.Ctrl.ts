@@ -4,11 +4,11 @@ export const extraInfoToRegiser_Get=async(req:any,res:any)=>{
     
         console.log("====1like111",req.params.id)
         var conflic= await  User.find({ fb_id:req.params.id })
-        console.log("email already exits",conflic[0].DOB);
+        //console.log("email already exits",conflic[0].DOB);
         if(conflic[0].DOB===undefined){
             res.redirect(`${CLIENT_URL}moreinfo/${req.params.id }`);
         }else{
-            res.redirect(`${CLIENT_URL}dashbord`);
+            res.redirect(`${CLIENT_URL}dashboard`);
         }
         
     }

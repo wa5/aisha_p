@@ -36,7 +36,7 @@ const  RegisterForm:React.FC<IRegisterFormProps>=(props)=>{
             alert("user not registred try again");
           }else if(resJson.status === "201"){
             alert("u registred");
-            navigate('/login');
+            navigate('/dashboard');
           }
        
       };

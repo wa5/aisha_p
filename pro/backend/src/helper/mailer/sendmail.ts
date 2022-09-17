@@ -15,7 +15,7 @@ function sendMail(name:any,email:any){
     }
     transporter.sendMail(mailoption,(errr:any,res:any)=>{
         if(errr){
-            console.log(errr)
+            console.log("hh",errr)
         }else{
             console.log('mail sent')
         }
