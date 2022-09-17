@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
  require("./src/middleware/auth/passort");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 //logger
 const { logger } = require('./src/middleware/logfiles/logEvents');
 const  errorHandler  = require('./src/middleware/logfiles/errorHandler');

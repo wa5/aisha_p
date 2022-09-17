@@ -15,7 +15,18 @@ export const extraInfoToRegiser_Get=async(req:any,res:any)=>{
     export const extraInfoToRegiser_Post=async(req:any,res:any)=>{
     
         console.log("====post",req.body)
-        // var conflic= await  User.find({ fb_id:req.params.id })
+        console.log("====post",req.params)
+        //console.log("====post",req.qurey.id)
+         
+         var likes=await  User.findOneAndUpdate({fb_id:req.params.id },
+            {phonno:req.body.phonno,DOB:req.body.dob,email:req.body.email},
+            {overwrite:false,new:true})
+         // console.log(likes)
+        
         // console.log("email already exits",conflic[0]);
-        res.redirect(`${CLIENT_URL}dashbord`);
+       
+            res.json({ "status": "200" });
+        
+        
+       // res.redirect(`${CLIENT_URL}dashbord`);
     }

@@ -12,7 +12,7 @@ var userStructure=new Schema({
     email:String,
     password:String,
     profilephoto:String,
-    DOB:Date,
+    DOB:String,
     photo:String,
     phonno:String,
     role:{
