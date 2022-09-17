@@ -3,6 +3,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 import Navbers1 from '../../components/navbar/Navbers1';
 import Google from '../../img/google.png'
 import Facebook from '../../img/facebook.png'
+import LoginForm from '../../components/Forms/LoginForm';
 export interface ILogin{};
 
 const  Login:React.FC<ILogin>=(props)=>{
@@ -47,9 +48,7 @@ const  Login:React.FC<ILogin>=(props)=>{
           <div className="or">OR</div>
         </div>
         <div className="right">
-          <input type="text" placeholder="Username" />
-          <input type="text" placeholder="Password" />
-          <button className="submit">Login</button>
+         <LoginForm/>
         </div>
       </div>
     </div>

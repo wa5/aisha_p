@@ -37,6 +37,9 @@ app.use(logger);
 app.use('/api',endPont.fbcall)
 app.use('/api',endPont.fbcallback)
 app.use('/api',endPont.extrainfocheck)
+app.use('/api',endPont.gmailregister)
+app.use('/api',endPont.gmaillogin)
+
 
 app.all('*', (req, res) => {
     res.status(404);

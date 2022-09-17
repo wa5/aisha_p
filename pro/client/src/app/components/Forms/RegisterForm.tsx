@@ -10,15 +10,14 @@ const  RegisterForm:React.FC<IRegisterFormProps>=(props)=>{
     var [lname, setLname] = useState("")
     var [email, setEmail] = useState("")
     var [password, setPassword] = useState("")
-    var [id, setId] = useState("")
     var [dob, setDob] = useState("")
     var [phonno, setPhonno] = useState("")
-    let items={fname,lname,id,phonno,password,dob,email}
+    let items={fname,lname,phonno,password,dob,email}
 
     let handleSubmit = async (e:any) => {
         e.preventDefault();
        
-          let res = await fetch(`http://localhost:8001/api/extrainfocheck`, {
+          let res = await fetch(`http://localhost:8001/api/gmail/register`, {
             method: "POST",
             headers:{
                 'Accept':'application/json',
@@ -27,13 +26,17 @@ const  RegisterForm:React.FC<IRegisterFormProps>=(props)=>{
             body: JSON.stringify(items),
           });
           let resJson = await res.json();
-          console.log("lop",res.status,resJson)
+          console.log("lop",res.status,resJson.status)
           
-          if (res.status === 200) {
-           alert("User created successfully");
-           navigate('/dashboard');
-          } else {
-            alert("Some error occured");
+          if (resJson.status === "409") {
+           alert("email alreay exits");
+           console.log(resJson)
+           //navigate('/login');
+          } else if (resJson.status === "309"){
+            alert("user not registred try again");
+          }else if(resJson.status === "201"){
+            alert("u registred");
+            navigate('/login');
           }
        
       };
@@ -47,7 +50,7 @@ const  RegisterForm:React.FC<IRegisterFormProps>=(props)=>{
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Last Name</Form.Label>
-        <Form.Control type="email"  onChange={(e) => setLname(e.target.value)} placeholder="Enter email" />
+        <Form.Control type="text"  onChange={(e) => setLname(e.target.value)} placeholder="Enter email" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
