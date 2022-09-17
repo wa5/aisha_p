@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form, Row,Col } from 'react-bootstrap';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-export interface IMoreInfoFormProps{};
+export interface IGoogleMoreInfoForm{};
 
-const  MoreInfoForm:React.FC<IMoreInfoFormProps>=(props)=>{
+const  GoogleMoreInfoForm:React.FC<IGoogleMoreInfoForm>=(props)=>{
     const navigate = useNavigate();
     var [email, setEmail] = useState("")
     var [id, setId] = useState("")
@@ -12,7 +12,7 @@ const  MoreInfoForm:React.FC<IMoreInfoFormProps>=(props)=>{
     var [phonno, setPhonno] = useState("")
     let items={id,phonno,dob,email}
     const params = useParams();
-  
+    
     useEffect(()=>{
         setId(params.id!)
     },[])
@@ -20,7 +20,7 @@ const  MoreInfoForm:React.FC<IMoreInfoFormProps>=(props)=>{
     let handleSubmit = async (e:any) => {
         e.preventDefault();
        
-          let res = await fetch(`http://localhost:8001/api/google/extrainfocheck/${id}`, {
+          let res = await fetch(`http://localhost:8001/api/extrainfocheckgoogle/${id}`, {
             method: "POST",
             headers:{
                 'Accept':'application/json',
@@ -83,4 +83,4 @@ function test(){
     </>);
 };
 
-export default MoreInfoForm;
+export default GoogleMoreInfoForm;

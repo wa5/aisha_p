@@ -4,8 +4,8 @@ const AppleStrategy = require("passport-apple").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const passport = require("passport");
 
-const GOOGLE_CLIENT_ID = "your id";
-const GOOGLE_CLIENT_SECRET = "your id";
+const GOOGLE_CLIENT_ID = "364919923615-a4eehcd1e266qtpdscjnvbiuedjafbrq.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "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";
 
 const GITHUB_CLIENT_ID = "your id";
 const GITHUB_CLIENT_SECRET = "your id";
@@ -18,11 +18,31 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "/api/google/callback",
+      rofileFields: ["id", "displayName", "photos", "email"],
     },
-    function (accessToken: any, refreshToken: any, profile: any, done: any) {
-      console.log(profile);
+   async function (accessToken: any, refreshToken: any, profile: any, done: any) {
+      const newUser = {
+        
+        google_id: profile.id,
+        fname: profile.displayName,
+        lname: profile.name.givenName,
+        email: profile.email,
+        photo: profile.photos[0].value,
+      };
+      console.log(newUser);
+      var conflic= await  User.find({ google_id:profile.id })
+     console.log("email already exits",conflic!=0);
+     if (conflic[0]) {
+      console.log("email already exitsl",!conflic);
       done(null, profile);
+     
+     }else{
+      var userdta = new User(newUser);
+      userdta.save();
+      done(null, profile);
+     }
+     
     }
   )
 );
@@ -33,6 +53,7 @@ passport.use(
       clientID: GITHUB_CLIENT_ID,
       clientSecret: GITHUB_CLIENT_SECRET,
       callbackURL: "/auth/github/callback",
+
     },
     function (accessToken: any, refreshToken: any, profile: any, done: any) {
       done(null, profile);

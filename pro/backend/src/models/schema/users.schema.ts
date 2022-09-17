@@ -4,7 +4,7 @@ var {Schema}=mongoose
 
 var userStructure=new Schema({
     fb_id:String,
-    gmail_id:String,
+    google_id:String,
     apple_id:String,
     fname:String,
     lname:String,

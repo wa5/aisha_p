@@ -39,6 +39,11 @@ app.use('/api',endPont.fbcallback)
 app.use('/api',endPont.extrainfocheck)
 app.use('/api',endPont.gmailregister)
 app.use('/api',endPont.gmaillogin)
+app.use('/api',endPont.googlecallback)
+app.use('/api',endPont.googlecall)
+app.use('/api',endPont.extraInfoCheckForGoogle)
+
+
 
 
 app.all('*', (req, res) => {

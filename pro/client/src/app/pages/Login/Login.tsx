@@ -9,7 +9,7 @@ export interface ILogin{};
 
 const  Login:React.FC<ILogin>=(props)=>{
     const google = () => {
-        window.open("http://localhost:5000/auth/google", "_self");
+        window.open("http://localhost:8001/api/google", "_self");
       };
     
       const github = () => {
