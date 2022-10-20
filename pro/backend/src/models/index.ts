@@ -1,3 +1,3 @@
 var User=require('./schema/users.schema')
-
-module.exports={User}
+var SellerUploadProducts=require('./schema/seller/products/uploadProducts.schema')
+module.exports={User,SellerUploadProducts}
