@@ -7,7 +7,13 @@ export const uploadProducts_Post=async(req:any,res:any)=>{
         res.send('jj');
         
     }
-
+    export const uploadProducts_Get=async(req:any,res:any)=>{
+       var data=await  SellerUploadProducts.find({})
+       
+        console.log('ll',data)
+            res.send(data);
+            
+        }
     const products_uploads=(req:any,res:any)=>{
        
         let images;
@@ -60,5 +66,5 @@ export const uploadProducts_Post=async(req:any,res:any)=>{
        img_name:thumbnail,
         })
       moviedata.save()
-     res.send('done');
+     //res.send('done');
       }

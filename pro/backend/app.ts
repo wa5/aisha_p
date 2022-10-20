@@ -51,8 +51,6 @@ app.use('/api',endPont.extraInfoCheckForGoogle)
 app.use('/api',endPont.sellerUploadProducts)
 
 
-
-
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('json')) {

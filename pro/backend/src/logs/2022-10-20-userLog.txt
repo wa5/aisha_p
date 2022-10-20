@@ -21,3 +21,13 @@
 20221020	23:12:56	fe307cd3-d69f-4042-a19d-7c41399d19a7	POST	null	/api/upload-products
 20221020	23:14:23	3e1d6ae1-5e04-468f-a707-82f62985f51b	POST	null	/api/upload-products
 20221020	23:14:23	80c75cd8-ee0a-4735-9da9-b80dc2afc1b6	POST	null	/api/upload-products
+20221020	23:28:04	ce839d57-6bef-46d3-b8f3-ee9cbdb170a0	POST	null	/api/upload-products
+20221020	23:28:04	bd43a4de-529b-41dd-bf48-2adb887eed2d	POST	null	/api/upload-products
+20221020	23:28:41	63a90f99-60f7-443b-94b1-927b914ca975	POST	null	/api/upload-products
+20221020	23:28:41	243e4bc1-7af9-4005-b553-96edb5a48b08	POST	null	/api/upload-products
+20221020	23:37:13	cded3eed-2f1f-4bc6-94a6-a8edfffeeac5	POST	null	/api/upload-products
+20221020	23:37:13	72079a47-5bb3-42bc-a792-a72dcaa28277	POST	null	/api/upload-products
+20221020	23:51:24	65925bd8-165a-42e8-939a-ff0733f51440	POST	null	/api/upload-products
+20221020	23:51:24	d4abbb10-b8a1-4d7f-9b28-76a08aadeaae	POST	null	/api/upload-products
+20221020	23:52:12	ba4a61b9-1194-408e-b77c-e22641b489f1	GET	undefined	/api/upload-products
+20221020	23:52:12	991d22f4-5adf-47c4-be6e-b06064c9bd69	GET	undefined	/api/upload-products
