@@ -31,3 +31,9 @@
 20221020	23:51:24	d4abbb10-b8a1-4d7f-9b28-76a08aadeaae	POST	null	/api/upload-products
 20221020	23:52:12	ba4a61b9-1194-408e-b77c-e22641b489f1	GET	undefined	/api/upload-products
 20221020	23:52:12	991d22f4-5adf-47c4-be6e-b06064c9bd69	GET	undefined	/api/upload-products
+20221020	23:55:26	9a81d808-8c13-4a80-ac34-0fc589225df5	GET	undefined	/images/
+20221020	23:55:26	5a97fd01-c939-42b5-9a21-ba28d4c6d355	GET	undefined	/images/
+20221020	23:56:04	ce2a5e02-398e-4eb8-bd63-0c4c4e3c76a2	GET	undefined	/images/react-large-application%20-rchetecture.png
+20221021	00:01:03	7cd7fd95-1c02-46ed-bbdd-48399f57aca6	GET	undefined	/images/react-large-application%20-rchetecture.png
+20221021	00:03:39	79d8ac6e-77d3-42d4-b3f5-4b23abe4da0c	GET	null	/api/upload-products
+20221021	00:03:39	e64d88e1-ba62-4e52-a226-69cbd46bbe58	GET	null	/api/upload-products

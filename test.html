@@ -96,5 +96,16 @@
         upload
       </button>
     </form>
+
+
+    <script >
+
+        async function a(){
+         var data=await fetch('http://localhost:8001/api/upload-products')
+       var data2=await data.json()
+       console.log(data2)
+        }
+        a()
+    </script>
 </body>
 </html>
