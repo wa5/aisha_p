@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:8001/api/upload-products" method="post">
+
+        <button> submit</button>
+    </form>
+    <form
+    method="post"
+    enctype="multipart/form-data"
+      action="http://localhost:8001/api/upload-products"
+     
+    >
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="email" class="form-label"><h3>Tittle</h3> </label>
+          <input
+            name="title"
+            type="text"
+            class="form-control"
+            id="email"
+            placeholder="move tittle"
+          />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label"
+            ><h3>Discription</h3>
+          </label>
+          <input
+            name="discription"
+            type="text"
+            class="form-control"
+            id="email"
+            placeholder="move discription" required
+          />
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+       
+        <div class="col-12">
+          <label for="email" class="form-label"><h3>Gener</h3> </label>
+          <select
+            name="sub_categary"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected>Open this select menu</option>
+            <option value="action">Action</option> 
+            <option value="comedy">comedy</option>
+            <option value="sai_fi">sai-fi</option> 
+            <option value="horror">Horror</option>               
+          </select>
+        </div>
+      </div>
+    
+      <hr class="my-4" />
+      <div class="col-12">
+        <label for="email" class="form-label"><h3>Age restriction</h3> </label>
+        <select
+          
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Open this select menu</option>
+          <option value="kid">kide</option> 
+          <option value="adult">adult</option>
+                 
+        </select>
+      </d
+      <hr class="my-4" />
+    
+      <div class="row gy-3">
+        <div class="col-12">
+              <label for="email" class="form-label"><h3>upload thumbnail</h3> </label>
+              <input  name="thumbnail" type="file" class="form-control" id="email" placeholder="move discription" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+      
+      </div>
+    
+      <hr class="my-4" />
+    
+      <button class="w-100 btn btn-primary btn-lg" type="submit">
+        upload
+      </button>
+    </form>
+
+
+    <script >
+
+        async function a(){
+         var data=await fetch('http://localhost:8001/api/upload-products')
+       var data2=await data.json()
+       console.log(data2)
+        }
+        a()
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@ const path=require('path')
 const cors=require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
  require("./src/middleware/auth/passort");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -16,6 +17,9 @@ const endPont=require('./src/routes')
 const passport = require("passport");
 const cookieSession = require("cookie-session");
 
+app.use(bodyParser.json());
+const fs = require("fs");
+app.use(fileUpload())
 
 app.use(
   cookieSession({ name: "session", keys: ["aisha"], maxAge: 24 * 60 * 60 * 100 })
@@ -27,7 +31,9 @@ app.use(cors({
     methods: "GET,POST,PUT,DELETE",
     credentials: true
   }))
-
+  app.use("/images", express.static(__dirname + "src/public/images"))
+  app.use(logger);
+  app.use(express.static(path.join(__dirname, 'src/public')))
 
 
 
@@ -42,8 +48,7 @@ app.use('/api',endPont.gmaillogin)
 app.use('/api',endPont.googlecallback)
 app.use('/api',endPont.googlecall)
 app.use('/api',endPont.extraInfoCheckForGoogle)
-
-
+app.use('/api',endPont.sellerUploadProducts)
 
 
 app.all('*', (req, res) => {
