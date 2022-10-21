@@ -49,7 +49,7 @@ app.use('/api',endPont.googlecallback)
 app.use('/api',endPont.googlecall)
 app.use('/api',endPont.extraInfoCheckForGoogle)
 app.use('/api',endPont.sellerUploadProducts)
-
+//jj
 
 app.all('*', (req, res) => {
     res.status(404);
