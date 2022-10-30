@@ -35,10 +35,7 @@ const Listing: React.FC<ILogin> = (props) => {
   const [ItemType, setItemType] = React.useState("");
   const [itemFromvalue, setItemFromValue] = React.useState<Dayjs | null>(null);
   const [itemToValue, setItemToValue] = React.useState<Dayjs | null>(null);
-  const [itemPicture, setItemPicture] = React.useState({
-    preview: "",
-    url: "",
-  });
+  const [itemPicture, setItemPicture] = React.useState<{ preview: string,url:string }>({preview:'',url:''});
 
   const handleSelectChange = (event: SelectChangeEvent) => {
     setItemType(event.target.value);
@@ -76,18 +73,43 @@ const Listing: React.FC<ILogin> = (props) => {
 
  
 
-  var items = {itemDetails,ItemType,itemFromvalue,itemToValue,itemPictureURL:itemPicture['url'],itemPictureName:itemPicture['preview']};
+  
   let handleSubmit = async () => {
+    
     // saga dispatch
-    dispatch({ type: "Listing_ITEMS", payload: items });
+   // dispatch({ type: "Listing_ITEMS", payload: items });
+   const file = await fetch(itemPicture.preview).then(r => r.blob()).then(blobFile => new File([blobFile], itemPicture.preview, { type: blobFile.type }))
+  console.log("00",file)
+  var g=itemPicture.preview
+//  console.log("00",g.name)
+   var items = {
+    itemDetails,ItemType,itemFromvalue,itemToValue,itemPictureURL:itemPicture};
+   let form = new FormData();
+   form.append('img_url',itemPicture.preview,)
+   form.append('name','00')
+   form.append('type','00')
+   form.append('description','00')
     // alert("items")
+    fetch(`http://localhost:8001/api/upload-products`, {
+      method: "POST",
+      body: form,
+    });
+    //let resJson = await res.json();
+    //console.log("lop",res.status,resJson)
     console.log("items",items)
     navigate('/listing-summary')
   };
 
+  // const handleItemPicture = (e: any) => {
+  //   let reader = new FileReader() 
+  // reader.readAsDataURL(e.target.files[0])
+  //   setItemPicture({
+  //     preview: reader.result,   
+  //   });
+  // };
   const handleItemPicture = (e: any) => {
     setItemPicture({
-      preview: e.target.files[0],
+      preview:e.target.files[0],
       url: URL.createObjectURL(e.target.files[0]),
     });
   };
@@ -172,6 +194,7 @@ const Listing: React.FC<ILogin> = (props) => {
               aria-label='upload picture'
               component='label'
             >
+            
               <input
                 hidden
                 accept='image/*'
@@ -180,12 +203,12 @@ const Listing: React.FC<ILogin> = (props) => {
               />
               <PhotoCamera />
             </IconButton>
-            <Avatar
+            {/* <Avatar
               alt='Remy Sharp'
-              src={itemPicture.url}
+              src={itemPicture}
               sx={{ width: 150, height: 150 }}
               variant='rounded'
-            />
+            /> */}
           </Stack>
           <Button
             variant='contained'

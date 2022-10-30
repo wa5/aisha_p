@@ -2,9 +2,14 @@ import { UploadedFile } from "express-fileupload"
 const {SellerUploadProducts}=require('../../models')
 const path=require('path')
 export const uploadProducts_Post=async(req:any,res:any)=>{
+  console.log('ll',req.body)
+  //  console.log('ll',req.query)
+  //  console.log('ll',req.params)
     products_uploads(req,res)
-    console.log('ll',req.body)
-        res.send('jj');
+    // console.log('ll',req.body)
+    // console.log('ll',req.query)
+    // console.log('ll',req.params)
+       // res.send('jj');
         
     }
     export const uploadProducts_Get=async(req:any,res:any)=>{
@@ -32,20 +37,20 @@ export const uploadProducts_Post=async(req:any,res:any)=>{
         //let title=req.body.title
        // let discription=req.body.discription
        // let sub_categary=req.body.sub_categary
-        const mypath=path.join(__dirname, '../../../public')
-        console.log("ppppppp",mypath)
+        const mypath=path.join(__dirname, '../../../src/public')
+       // console.log("ppppppp",mypath)
         //path.join(__dirname, 'src/public')
         if (!req.files || Object.keys(req.files).length === 0) {
-            console.log(req.files)
+            //console.log("file not there",req.files)
           return res.status(400).send('No files were uploaded.');
         }
         
-      
-      images = req.files.thumbnail as UploadedFile
-     
+     // console.log("wts in file",req.files.img_url.name)
+      images = req.files.img_url as UploadedFile
+     console.log(images)
       uploadPath2 = mypath + '/images/' + images.name;
       let thumbnail=images.name
-      console.log(thumbnail)
+      //console.log(thumbnail)
       images.mv(uploadPath2, function(err) {
         if (err){
             console.log(err)
