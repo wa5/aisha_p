@@ -1,0 +1,31 @@
+.paper{
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+}
+.mainDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+    box-sizing: border-box;
+    margin-block: 0px;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: Lato, "Lucida Grande", Tahoma, sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 40px;
+    font-style: italic;
+    max-width: 100%;
+   margin-left: 20px;
+   margin-top: 5px;
+   margin-bottom: 30px;
+}
+.subHeading{
+    font-size: medium;
+    font-weight: 500;
+    margin-left: 20px;
+    color: #006142;
+}
